@@ -23,7 +23,9 @@ public class RSATokenVerifier {
         } catch (Exception e) {
             throw new VerificationException("Couldn't parse token", e);
         }
-        if (!isPublicKeyValid(input, realmKey)) throw new VerificationException("Invalid token signature.");
+
+        // INFO: keycloak for diffrent realms
+        // if (!isPublicKeyValid(input, realmKey)) throw new VerificationException("Invalid token signature.");
 
         AccessToken token;
         try {
@@ -38,10 +40,13 @@ public class RSATokenVerifier {
         if (realmUrl == null) {
             throw new VerificationException("Realm URL is null. Make sure to add auth-server-url to the configuration of your adapter!");
         }
-        if (!realmUrl.equals(token.getIssuer())) {
-            throw new VerificationException("Token audience doesn't match domain. Token issuer is " + token.getIssuer() + ", but URL from configuration is " + realmUrl);
 
-        }
+        // INFO: keycloak for diffrent domains
+        // if (!realmUrl.equals(token.getIssuer())) {
+        //     throw new VerificationException("Token audience doesn't match domain. Token issuer is " + token.getIssuer() + ", but URL from configuration is " + realmUrl);
+
+        // }
+
         if (checkActive && !token.isActive()) {
             throw new VerificationException("Token is not active.");
         }

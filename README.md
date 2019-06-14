@@ -1,5 +1,6 @@
 Keycloak
 ========
+THIS BRANCH IS BASED ON TAG 1.3.1.FINAL and contains chanages needed for CABP NUXEO !!!!
 
 Keycloak is an SSO Service for web apps and REST services. For more information visit [http://keycloak.org](http://keycloak.org).  
 
