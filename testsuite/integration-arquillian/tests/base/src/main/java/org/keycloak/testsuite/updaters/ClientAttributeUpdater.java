@@ -49,6 +49,11 @@ public class ClientAttributeUpdater {
         return this;
     }
 
+    public ClientAttributeUpdater setRedirectUris(List<String> values) {
+        this.rep.setRedirectUris(values);
+        return this;
+    }
+
     public ClientAttributeUpdater removeAttribute(String name) {
         this.rep.getAttributes().remove(name);
         return this;
