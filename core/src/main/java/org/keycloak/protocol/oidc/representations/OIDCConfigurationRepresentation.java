@@ -43,6 +43,9 @@ public class OIDCConfigurationRepresentation {
     @JsonProperty("introspection_endpoint")
     private String introspectionEndpoint;
 
+    @JsonProperty("token_introspection_endpoint")
+    private String tokenIntrospectionEndpoint;
+
     @JsonProperty("userinfo_endpoint")
     private String userinfoEndpoint;
 
@@ -357,4 +360,11 @@ public class OIDCConfigurationRepresentation {
         otherClaims.put(name, value);
     }
 
+    public String getTokenIntrospectionEndpoint() {
+        return tokenIntrospectionEndpoint;
+    }
+    
+    public void setTokenIntrospectionEndpoint(String tokenIntrospectionEndpoint) {
+        this.tokenIntrospectionEndpoint = tokenIntrospectionEndpoint;
+    }   
 }

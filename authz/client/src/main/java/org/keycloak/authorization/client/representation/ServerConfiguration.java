@@ -38,6 +38,9 @@ public class ServerConfiguration {
 
     @JsonProperty("introspection_endpoint")
     private String introspectionEndpoint;
+    
+    @JsonProperty("token_introspection_endpoint")
+    private String tokenIntrospectionEndpoint;
 
     @JsonProperty("userinfo_endpoint")
     private String userinfoEndpoint;
@@ -214,5 +217,9 @@ public class ServerConfiguration {
     
     public String getPolicyEndpoint() {
         return policyEndpoint;
+    }
+    
+    public String getTokenIntrospectionEndpoint() {
+        return tokenIntrospectionEndpoint;
     }
 }
