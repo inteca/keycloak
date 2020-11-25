@@ -215,7 +215,7 @@ public class OIDCWellKnownProviderTest extends AbstractKeycloakTest {
         Client client = ClientBuilder.newClient();
         try {
             ObjectNode oidcConfig = JsonSerialization.readValue(getOIDCDiscoveryConfiguration(client), ObjectNode.class);
-            assertEquals(oidcConfig.get("introspection_endpoint").asText(), getOIDCDiscoveryRepresentation(client).getIntrospectionEndpoint());
+            assertEquals(oidcConfig.get("introspection_endpoint").asText(), getOIDCDiscoveryRepresentation(client).getTokenIntrospectionEndpoint());
         } finally {
             client.close();
         }
